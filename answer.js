@@ -2,13 +2,13 @@ console.log("===== Thaivivat's Assignment =====")
 
 anagrams()
 Parentheses()
-reverse("(tavi(h(ia)v)t)")
 
 function anagrams() {
+    console.log(`##### Question 1 #####`)
     const data = ["AMOR", "XISELA", "JAMON", "ROMA", "OMAR", "MORA", "ESPONJA", "RAMO", "JAPONES", "ARMO", "MOJAN", "MARO", "ORAM", "MONJA", "ALEXIS"]
 
     let listAscii = [],
-        dic = {}
+        collectionAscii = {}
 
     for (const word of data) {
         let sumAscii = 0
@@ -17,15 +17,25 @@ function anagrams() {
         }
 
         if (!listAscii.includes(sumAscii)) {
-            if (dic[sumAscii] === undefined) dic[sumAscii] = `${word}`
-            else dic[sumAscii] += `,${word}`
+            if (collectionAscii[sumAscii] === undefined) collectionAscii[sumAscii] = `${word}`
+            else collectionAscii[sumAscii] += `,${word}`
         }
     }
-    return console.log(Object.values(dic));
+
+    let result = []
+    for (var key in collectionAscii) {
+        let categoryAscii = []
+        var value = collectionAscii[key];
+        categoryAscii.push(value)
+        result.push(categoryAscii)
+    }
+
+    return console.log(result);
 
 }
 
 function Parentheses() {
+    console.log(`##### Question 2 #####`)
     const txt = "(tavi(h(ia)v)t)"
     //(tavi(h(ia)v)t)
     //(tavi(haiv)t)
